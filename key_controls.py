@@ -33,7 +33,7 @@ def get_keyboard_input():
     speed = 50
     image_count = 1
 
-    if kp.is_key_pressed(''):
+    if kp.is_key_pressed(''): 
         drone.land()
     elif kp.is_key_pressed(''):
         drone.takeoff()
@@ -50,12 +50,12 @@ def get_keyboard_input():
 
     if kp.is_key_pressed(''): #moves down
         down_up = -speed
-    elif kp.is_key_pressed('w'):#moves up
+    elif kp.is_key_pressed(''):#moves up
         down_up = speed
 
-    if kp.is_key_pressed('d'):
+    if kp.is_key_pressed(''): #rotates
         c_cc_yaw = -speed
-    elif kp.is_key_pressed('a'):
+    elif kp.is_key_pressed(''): #rotates
         c_cc_yaw = speed
     
     if kp.is_key_pressed('p'):
@@ -67,10 +67,10 @@ def get_keyboard_input():
     return [left_right, bk_fwd, down_up, c_cc_yaw]
 
 
-# wait for RETURN to take off
+# wait for keypress to take off
 
 while True:
-    if kp.is_key_pressed('RETURN') is True:
+    if kp.is_key_pressed('') is True: #update so that the drone will initial takeoff on a certain keypress
         break
 drone.takeoff()
 
