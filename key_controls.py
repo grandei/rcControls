@@ -16,7 +16,7 @@ drone.set_video_fps(fps)
 drone.set_video_resolution(res)
 drone.streamon()
 
-image_folder = r"C:\Users\GrandeI\Documents\droneTestImages\\"
+image_folder = r"C:\Users\GrandeI\Documents\droneTestImages\\" #replace filepath with where you will be storing your drone images
 image_count = 1
 
 frame_read = drone.get_frame_read()
@@ -33,10 +33,12 @@ def get_keyboard_input():
     speed = 50
     image_count = 1
 
-    if kp.is_key_pressed('q'):
+    if kp.is_key_pressed(''):
         drone.land()
+    elif kp.is_key_pressed(''):
+        drone.takeoff()
 
-    if kp.is_key_pressed('LEFT'):
+    if kp.is_key_pressed('LEFT'): #this is an arrow key
         left_right = -speed
     elif kp.is_key_pressed('RIGHT'):
         left_right = speed
@@ -46,9 +48,9 @@ def get_keyboard_input():
     elif kp.is_key_pressed('UP'):
         bk_fwd = speed
 
-    if kp.is_key_pressed('s'):
+    if kp.is_key_pressed(''): #moves down
         down_up = -speed
-    elif kp.is_key_pressed('w'):
+    elif kp.is_key_pressed('w'):#moves up
         down_up = speed
 
     if kp.is_key_pressed('d'):
