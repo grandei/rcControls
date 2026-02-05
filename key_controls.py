@@ -59,10 +59,7 @@ def get_keyboard_input():
         c_cc_yaw = speed
     
     if kp.is_key_pressed('p'):
-        image_path = f"{image_folder}image_{image_count}.png"
-        cv2.imwrite(image_path, img)
-        print(f"Image saved: {image_path}")
-        image_count += 1
+        print()
 
     return [left_right, bk_fwd, down_up, c_cc_yaw]
 
@@ -86,3 +83,4 @@ while True:
         commands[2],
         commands[3])
     sleep(0.05)
+
